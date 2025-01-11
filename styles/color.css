@@ -1,0 +1,143 @@
+.bg-grass {
+    background-color: rgba(119, 204, 85, 0.8);
+}
+
+.bg-grass-type {
+    background-color: rgb(119, 204, 85);
+}
+
+.bg-poison {
+    background-color: rgba(170, 85, 153, 0.801);
+}
+
+.bg-poison-type {
+    background-color: #aa5599d2;
+}
+
+.bg-normal {
+    background-color: rgba(170, 170, 153, 0.801);
+}
+
+.bg-normal-type {
+    background-color: #AAAA99;
+}
+
+.bg-fire {
+    background-color: hsla(9, 100%, 57%, 0.801);
+}
+
+.bg-fire-type {
+    background-color: #FF4422;
+}
+
+.bg-water {
+    background-color: rgba(51, 153, 255, 0.801);
+}
+
+.bg-water-type {
+    background-color: #3399FF;
+}
+
+.bg-electric {
+    background-color: rgba(255, 204, 51, 0.801);
+}
+
+.bg-electric-type {
+    background-color: #FFCC33;
+}
+
+.bg-ice {
+    background-color: rgba(102, 204, 255, 0.801);
+}
+
+.bg-ice-type {
+    background-color: #66CCFF;
+}
+
+.bg-fighting {
+    background-color: rgba(187, 86, 68, 0.801);
+}
+
+.bg-fighting-type {
+    background-color: #BB5544;
+}
+
+.bg-ground {
+    background-color: rgba(221, 187, 85, 0.801);
+}
+
+.bg-ground-type {
+    background-color: #DDBB55;
+}
+
+.bg-flying {
+    background-color: rgba(136, 154, 255, 0.801);
+}
+
+.bg-flying-type {
+    background-color: #8899FF;
+}
+
+.bg-psychic {
+    background-color: rgba(255, 85, 153, 0.801);
+}
+
+.bg-psychic-type {
+    background-color: #FF5599;
+}
+
+.bg-bug {
+    background-color: rgba(169, 187, 34, 0.801);
+}
+
+.bg-bug-type {
+    background-color: #AABB22;
+}
+
+.bg-rock {
+    background-color: rgba(187, 170, 102, 0.801);
+}
+
+.bg-rock-type {
+    background-color: #BBAA66;
+}
+
+.bg-ghost {
+    background-color: rgba(102, 102, 187, 0.801);
+}
+
+.bg-ghost-type {
+    background-color: #6666BB;
+}
+
+.bg-dragon {
+    background-color: hsla(248, 80%, 67%, 0.801);
+}
+
+.bg-dragon-type {
+    background-color: #7766EE;
+}
+
+.bg-dark {
+    background-color: rgba(119, 85, 68, 0.801);
+}
+
+.bg-dark-type {
+    background-color: #775544;
+}
+
+.bg-steel {
+    background-color: rgba(170, 170, 187, 0.8);
+}
+
+.bg-steel-type {
+    background-color: #AAAABB;
+}
+
+.bg-fairy {
+    background-color: rgba(238, 153, 238, 0.801);
+}
+
+.bg-fairy-type {
+    background-color: #EE99EE;
+}
