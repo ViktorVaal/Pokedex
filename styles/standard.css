@@ -1,0 +1,17 @@
+.d-none {
+    display: none !important;
+}
+
+.margin-0 {
+    margin: 0;
+}
+
+.progress-bar {
+    border-radius: 8px;
+}
+
+@media(max-width: 540px) {
+    .poke-card {
+        width: 230px;
+    }
+}

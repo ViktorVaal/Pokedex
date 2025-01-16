@@ -1,0 +1,185 @@
+.overlay-container {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-pokemon-card {
+    max-width: 300px;
+    min-width: 260px;
+    width: 80%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 16px;
+}
+
+.pokemon-infos {
+    width: 100%;
+    height: 60%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-end;
+    border-radius: 16px;
+}
+
+.infos-navbar {
+    width: 90%;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin-top: 24px;
+
+}
+
+.infos-navbar span {
+    cursor: pointer;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.infos-navbar span.active {
+    color: black;
+    text-decoration: underline;
+    text-underline-offset: 22px;
+}
+
+.hl {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    height: 1px;
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#overlayId {
+    align-self: flex-end;
+    color: white;
+    font-weight: bold;
+    transform: translateY(-32px);
+}
+
+#overlayShortInfo {
+    color: white;
+    margin: 0 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#closeBtn {
+    cursor: pointer;
+    align-self: flex-end;
+    margin: 15px 5px 0 15px;
+}
+
+#closeBtn img {
+    height: 32px;
+}
+
+#typeAndId {
+    display: flex;
+    justify-content: space-between;
+    height: 25px;
+}
+
+#type{
+    display: flex;
+    gap: 8px;
+    height: fit-content;
+}
+
+#overlaySprite {
+    display: flex;
+    justify-content: center;
+}
+
+#overlaySprite img {
+    height: 140px;
+    transform: translateY(30px);
+}
+
+.td-left {
+    color: rgba(0, 0, 0, 0.5);
+    width: 54%;
+}
+
+table {
+    width: 100%;
+    height: 40%;
+    font-size: 14px;
+}
+
+#aboutInfo {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#aboutInfo h3 {
+    align-self: flex-start;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+#pokemonAbilities {
+    margin-top: 16px;
+    align-self: flex-start;
+    font-size: 14px;
+}
+
+#baseStatInfo {
+    height: 80%;
+    width: 90%;
+}
+
+.base-stats-table {
+    height: 60%;
+}
+
+.base_stat-td-left {
+    width: 25%;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.base_stat-td-middle {
+    font-weight: 530;
+    width: 15%;
+}
+
+.base_stat-td-right {
+    width: 55%;
+}
+
+.progress {
+    height: 6px !important;
+}
+
+#baseStatInfo h3 {
+    align-self: flex-start;
+    margin-top: 16px;
+    font-size: 20px;
+}
+
+#evolutionInfo {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+#evolutionInfo img {
+    height: 100px;
+}
