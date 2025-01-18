@@ -10,8 +10,6 @@
     border-radius: 8px;
 }
 
-@media(max-width: 540px) {
-    .poke-card {
-        width: 230px;
-    }
+.overflow-hidden {
+    overflow: hidden;
 }

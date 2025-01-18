@@ -1,8 +1,10 @@
-function overlayPokemonCardTemplate() {
-    return ` <div onclick="closeOverlay()" id="closeBtn">
-                    <img src="./assets/img/close.png" alt="">
+function overlayPokemonCardTemplate(index) {
+    return ` <div id="changePokemon">
+                    <img onclick="prevPokemon(${index})" src="./assets/img/arrow_back.png" alt="">
+                    <h3>${overlayData.forms[0].name[0].toUpperCase() + overlayData.forms[0].name.slice(1)}</h3>
+                    <img onclick="nextPokemon(${index})" src="./assets/img/arrow_forward.png" alt="">
                 </div>
-                <h3>${overlayData.forms[0].name[0].toUpperCase() + overlayData.forms[0].name.slice(1)}</h3>
+                
                 <div id="typeAndId">
                     <div id="type">
                     </div>
@@ -11,7 +13,7 @@ function overlayPokemonCardTemplate() {
                 </div>
                 <div id="overlaySprite">
                     <img src="${overlayData.sprites.other["official-artwork"].front_default}" alt="">
-                </div>` 
+                </div>`
 }
 
 function aboutInfoTemplate() {
@@ -34,7 +36,7 @@ function aboutInfoTemplate() {
                     </tr>
                 </table>
                 <h3>Abilities:</h3>
-                <span id="pokemonAbilities"></span>`          
+                <span id="pokemonAbilities"></span>`
 }
 
 function baseStatTemplate(index) {

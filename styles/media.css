@@ -1,0 +1,153 @@
+@media(max-width: 540px) {
+    .poke-card {
+        width: 230px;
+    }
+}
+
+@media(max-width: 500px) {
+    .overlay-pokemon-card {
+        height: 500px;
+    }
+
+    #overlaySprite img {
+        height: 100px;
+        transform: translateY(20px);
+    }
+
+    #evolutionInfo img {
+        height: 80px;
+    }
+
+    .hl {
+        margin: 0;
+    }
+
+    #evolutionInfo {
+        gap: 0;
+    }
+
+    .infos-navbar span.active {
+        text-underline-offset: 6px;
+    }
+
+    #aboutInfo {
+        margin-top: 12px;
+    }
+
+    #aboutInfo h3 {
+        margin-top: 10px;
+    }
+
+    #pokemonAbilities {
+        margin: 0;
+    }
+
+    #baseStatInfo {
+        margin-top: 12px;
+    }
+
+    .base-stats-table {
+        height: 90%;
+    }
+
+    #evolutionInfo {
+        margin-top: 8px;
+    }
+}
+
+@media(max-width: 440px) {
+    header a h3 {
+        font-size: 16px;
+    }
+
+    header a img {
+        height: 40px;
+    }
+
+    .form-control {
+        max-width: 140px;
+    }
+}
+
+@media(max-height: 830px) {
+    .overlay-pokemon-card {
+        transform: translateY(14px);
+    }
+}
+
+@media(max-height: 600px){
+    .overlay-pokemon-card {
+        height: 300px;
+        width: 550px;
+        max-width: 520px;
+        transform: translateY(28px);
+    }
+
+    #overlayShortInfo {
+        gap: 0;
+    }
+
+    #overlayShortInfo h3 {
+        margin: 0;
+
+    }
+
+    #overlaySprite {
+        height: 20px;
+    }
+
+    #overlaySprite img {
+        height: 80px;
+        transform: translateY(-45px);
+    }
+
+    #evolutionInfo img {
+        height: 80px;
+    }
+
+    .hl {
+        margin: 0;
+    }
+
+    #evolutionInfo {
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .infos-navbar span.active {
+        text-underline-offset: 6px;
+    }
+
+    #aboutInfo {
+        margin-top: 12px;
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    #aboutInfo table {
+        width: 60%;
+    }
+
+    #aboutInfo h3 {
+        justify-self: flex-start;
+        margin: 0;
+    }
+
+    #pokemonAbilities {
+        margin: 0;
+    }
+
+    #baseStatInfo {
+        margin-top: 12px;
+        overflow: scroll;
+    }
+
+    .base-stats-table {
+        height: 90%;
+       
+    }
+
+    #evolutionInfo {
+        margin-top: 8px;
+    }
+}

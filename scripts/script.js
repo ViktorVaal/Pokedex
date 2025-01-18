@@ -1,5 +1,6 @@
 let allPokemon = {};
-let amount = 50;
+let filteredPokemon = [];
+let amount = 35;
 let offset = 0;
 let data = {};
 let overlayData = {};
@@ -19,6 +20,8 @@ function render() {
 }
 
 async function getData(path = "") {
+    let loaderRef = document.getElementById("loader");
+    loaderRef.style.display = "flex";
     try {
         let response = await fetch(path);
         if (!response.ok) {
@@ -28,6 +31,8 @@ async function getData(path = "") {
         return responseToJson;
     } catch (error) {
         console.error(error);
+    }finally {
+        loaderRef.style.display = "none"
     }
 }
 
@@ -83,6 +88,7 @@ async function renderBackgroundColor() {
 
 
 function loadMorePokemon() {
-    offset = offset + 50;
+    offset = offset + amount;
     renderPokeCard() 
 }
+

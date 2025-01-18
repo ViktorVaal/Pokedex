@@ -64,10 +64,11 @@
     align-self: flex-end;
     color: white;
     font-weight: bold;
-    transform: translateY(-32px);
 }
 
 #overlayShortInfo {
+    height: 40%;
+    justify-content: space-between;
     color: white;
     margin: 0 15px;
     display: flex;
@@ -75,14 +76,17 @@
     gap: 8px;
 }
 
-#closeBtn {
-    cursor: pointer;
+#changePokemon {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     align-self: flex-end;
-    margin: 15px 5px 0 15px;
+    margin-top: 15px;
 }
 
-#closeBtn img {
+#changePokemon img {
     height: 32px;
+    cursor: pointer;
 }
 
 #typeAndId {
@@ -128,7 +132,7 @@ table {
 
 #aboutInfo h3 {
     align-self: flex-start;
-    margin-top: 40px;
+    margin-top: 20px;
     font-size: 20px;
 }
 
@@ -179,7 +183,16 @@ table {
     align-items: center;
     gap: 16px;
     margin-bottom: 8px;
+    overflow: auto;
 }
 #evolutionInfo img {
-    height: 100px;
+    height: 90px;
+}
+
+#movesInfo {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+    overflow-x: hidden;
 }
