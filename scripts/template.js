@@ -28,16 +28,6 @@ function pokemonIdTemplate() {
     }
 }
 
-function overlayPokemonIdTemplate() {
-    if (overlayData.id < 10) {
-        return `<span class="id">#00${overlayData.id}</span>`
-    } else if (overlayData.id >= 10 && data.id < 100) {
-        return `<span class="id">#0${overlayData.id}</span>`
-    } else {
-        return `<span class="id">#${overlayData.id}</span>`
-    }
-}
-
 function pokemonSpriteTemplate() {
     return `<img class="pokemon-sprite" src="${data.sprites.other["official-artwork"].front_default}" alt="">`
 }

@@ -11,11 +11,11 @@
 
     #overlaySprite img {
         height: 100px;
-        transform: translateY(20px);
+        transform: translateY(8px);
     }
 
     #evolutionInfo img {
-        height: 80px;
+        height: 79px;
     }
 
     .hl {

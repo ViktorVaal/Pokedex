@@ -1,3 +1,4 @@
+let bodyRef = document.getElementById("body");
 let allPokemon = {};
 let filteredPokemon = [];
 let amount = 35;
@@ -43,6 +44,7 @@ async function renderPokeCard() {
     for (let index = 0; index < amount; index++) {
         contentRef.innerHTML += pokeCardTemplate(index);
     }
+    toggleScroll();
     render();
 }
 
@@ -84,11 +86,19 @@ async function renderBackgroundColor() {
             pokeCardRef[i + offset].classList.add(`bg-${data.types[0].type.name}`);
         }
     }
+    toggleScroll();
 }
 
 
-function loadMorePokemon() {
+async function loadMorePokemon() {
     offset = offset + amount;
-    renderPokeCard() 
+    let loadBtn = document.getElementById("loadMoreBtn");
+    loadBtn.disabled = true;
+    await renderPokeCard(); 
+    loadBtn.disabled = false;
+}
+
+function toggleScroll() {
+    bodyRef.classList.toggle("overflow-hidden");
 }
 

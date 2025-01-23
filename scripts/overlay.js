@@ -1,4 +1,5 @@
 let statNames = ["HP", "Attack", "Defense", "Sp. Atk", "Sp. Def", "Speed"];
+let audio;
 
 async function openOverlayPokemonCard(index) {
     let overlay = document.getElementById("overlayContainer");
@@ -23,12 +24,15 @@ function renderOverlayInfo(index) {
 }
 
 function renderOverlayPokemonCard(index) {
-    let audio = new Audio(overlayData.cries.latest);
-    audio.play();
+    audio = new Audio(overlayData.cries.latest);
     document.getElementById("overlayPokemonCard").classList.add(`bg-${overlayData.types[0].type.name}`);
     let overlayShortInfoRef = document.getElementById("overlayShortInfo");
     overlayShortInfoRef.innerHTML = overlayPokemonCardTemplate(index);
     renderOverlayInfo(index)
+}
+
+function playAudio() {
+    audio.play();
 }
 
 function renderOverleyType() {
@@ -45,15 +49,15 @@ function renderOverlayId() {
 }
 
 function closeOverlay() {
-    
     let overlay = document.getElementById("overlayContainer");
     if (event.target == overlay) {
         document.getElementById("overlayPokemonCard").classList.remove(`bg-${overlayData.types[0].type.name}`);
         overlay.classList.add("d-none");
         let bodyRef = document.getElementById("body");
         bodyRef.classList.remove("overflow-hidden");
+        moveInfoNavbar(0);
     }
-    
+   
 }
 
 function renderPokemonInfosAbout(index) {

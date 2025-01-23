@@ -10,12 +10,11 @@ async function filterPokemon() {
     loadMoreRef.classList.add("d-none");
     allPokemon = await getData("https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0");
     allPokemon = allPokemon.results
-    let inputRef = document.getElementById("filterInput").value;
+    let inputRef = document.getElementById("filterInput").value.toLowerCase();
     if (inputRef.length < 3) {
         alert("Bitte geben Sie mindestens 3 Buchstaben ein!")
     }else {
         filteredPokemon = allPokemon.filter((elem) => elem["name"].startsWith(inputRef));
-        console.log(filteredPokemon);
         renderFilteredPokemonCards()
     }
 }
@@ -31,7 +30,7 @@ function renderFilteredPokemon() {
 
 async function renderFilteredBackgroundColor() {
     let pokeCardRef = document.getElementsByClassName("poke-card");
-    for (let i = 0; i < 11 - offset; i++) {
+    for (let i = 0; i < pokeCardRef.length; i++) {
         data = await getData(`https://pokeapi.co/api/v2/pokemon/${filteredPokemon[i].name}/`);   
         for (let index = 0; index < 1; index++) {
             pokeCardRef[i + offset].classList.add(`bg-${data.types[0].type.name}`);

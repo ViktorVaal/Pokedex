@@ -103,12 +103,20 @@
 
 #overlaySprite {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
     justify-content: center;
+}
+
+#audio {
+    cursor: pointer;
+    height: 24px !important;
 }
 
 #overlaySprite img {
     height: 140px;
-    transform: translateY(30px);
+    transform: translateY(20px);
 }
 
 .td-left {

@@ -12,8 +12,19 @@ function overlayPokemonCardTemplate(index) {
                     </div>
                 </div>
                 <div id="overlaySprite">
+                    <img id="audio" onclick="playAudio()" src="./assets/img/play_circle.png" alt="">
                     <img src="${overlayData.sprites.other["official-artwork"].front_default}" alt="">
                 </div>`
+}
+
+function overlayPokemonIdTemplate() {
+    if (overlayData.id < 10) {
+        return `<span class="id">#00${overlayData.id}</span>`
+    } else if (overlayData.id >= 10 && data.id < 100) {
+        return `<span class="id">#0${overlayData.id}</span>`
+    } else {
+        return `<span class="id">#${overlayData.id}</span>`
+    }
 }
 
 function aboutInfoTemplate() {
