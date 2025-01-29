@@ -29,6 +29,7 @@
 
 <body id="body" onload="init()">
     <div id="loader"><img src="./assets/img/pokemon-loading-spinner.png" alt=""></div>
+
     <div onclick="closeOverlay()" class="overlay-container d-none" id="overlayContainer">
         <div id="overlayPokemonCard" class="overlay-pokemon-card">
             <div id="overlayShortInfo">
@@ -59,11 +60,15 @@
     </div>
     <header>
         <div class="max-width">
-            <a href="./index.html"><img src="./assets/logos/pokeball_1.png" alt=""><h3>Pokedex</h3></a>
-            <div class="input-group">
-                <input  id="filterInput"  type="text" class="form-control" minlength="3"
-                    placeholder="Enter Pokemon" aria-label="Enter Pokemon" aria-describedby="button-addon2">
-                <img onclick="filterPokemon()" src="./assets/img/search.png" alt="">
+            <a href="./index.html"><img src="./assets/logos/pokeball_1.png" alt="">
+                <h3>Pokedex</h3>
+            </a>
+            <div>
+                <form class="input-group" onsubmit="filterPokemon(event)">
+                    <input required id="filterInput" type="text" class="form-control" minlength="3" placeholder="Enter Pokemon"
+                        aria-label="Enter Pokemon" aria-describedby="button-addon2">
+                    <button class="btn"><img src="./assets/img/search.png" alt=""></button>
+                </form>
             </div>
         </div>
     </header>
@@ -74,10 +79,6 @@
         <img src="./assets/img/double_arrow_down.png" alt="">
         <span>mehr laden</span>
     </button>
-
-
-
-    </div>
 
 </body>
 

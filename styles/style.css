@@ -33,6 +33,7 @@ header a {
 
 .input-group {
     justify-content: end;
+    align-items: center !important;
 }
 
 .max-width {

@@ -5,18 +5,15 @@ function renderFilteredPokemonCards() {
     renderFilteredPokemonSprite();
 }
 
-async function filterPokemon() {
+async function filterPokemon(event) {
+    event.preventDefault();
     let loadMoreRef = document.getElementById("loadMoreBtn");
     loadMoreRef.classList.add("d-none");
     allPokemon = await getData("https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0");
     allPokemon = allPokemon.results
     let inputRef = document.getElementById("filterInput").value.toLowerCase();
-    if (inputRef.length < 3) {
-        alert("Bitte geben Sie mindestens 3 Buchstaben ein!")
-    }else {
-        filteredPokemon = allPokemon.filter((elem) => elem["name"].startsWith(inputRef));
-        renderFilteredPokemonCards()
-    }
+    filteredPokemon = allPokemon.filter((elem) => elem["name"].startsWith(inputRef));
+    renderFilteredPokemonCards()
 }
 
 function renderFilteredPokemon() {
