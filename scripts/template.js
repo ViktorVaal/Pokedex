@@ -33,7 +33,7 @@ function pokemonSpriteTemplate() {
 }
 
 function evolutionChainTemplate(evoPokemon) {
-    return `<img class="pokemon-sprite" src="${evoPokemon.sprites.other["official-artwork"].front_default}" alt="">`
+    return `<img onclick="openOverlayPokemonCard(${evoPokemon.id - 1})" class="pokemon-sprite" src="${evoPokemon.sprites.other["official-artwork"].front_default}" alt="">`
 }
 
 

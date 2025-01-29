@@ -129,6 +129,7 @@ h3 {
 }
 
 .pokemon-sprite {
+    cursor: pointer;
     height: 83px;
 }
 
