@@ -1,5 +1,3 @@
-
-function toggleScroll() {}
 let bodyRef = document.getElementById("body");
 let allPokemon = {};
 let filteredPokemon = [];
@@ -76,6 +74,16 @@ async function renderPokeminInfos() {
     toggleScroll()
 }
 
+/**
+ * Renders a Pokémon card with ID, sprite, and types on the webpage.
+ * 
+ * This function takes an index as an argument and uses it to determine which
+ * .pokemon-id, .pokemon-sprite, and .short-info elements to update with the
+ * corresponding data. It also adds a class to the .poke-card element to
+ * style it based on the first type of the Pokémon.
+ * 
+ * @param {number} i The index of the Pokémon to render.
+ */
 function render(i) {
     pokemonIdRef[i + offset].innerHTML += pokemonIdTemplate(data);
     spriteRef[i + offset].innerHTML += pokemonSpriteTemplate(data);
@@ -85,6 +93,18 @@ function render(i) {
     }
 }
 
+/**
+ * Loads the next set of Pokémon cards on the webpage.
+ * 
+ * This function increments the offset by the amount of Pokémon per page and
+ * calls renderPokeCard() to fetch and render the next set of Pokémon cards.
+ * It also disables the "Load more" button while the data is being fetched to
+ * prevent multiple requests from being sent.
+ * 
+ * @async
+ * @function loadMorePokemon
+ * @returns {Promise<void>} A promise that resolves when the next set of Pokémon cards has been rendered.
+ */
 async function loadMorePokemon() {
     offset = offset + amount;
     let loadBtn = document.getElementById("loadMoreBtn");
@@ -93,6 +113,12 @@ async function loadMorePokemon() {
     loadBtn.disabled = false;
 }
 
+/**
+ * Toggles the overflow-hidden class of the body element to prevent or allow
+ * scrolling while the overlay is open.
+ * 
+ * @function toggleScroll
+ */
 function toggleScroll() {
     bodyRef.classList.toggle("overflow-hidden");
 }
