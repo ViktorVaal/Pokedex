@@ -45,7 +45,9 @@ function renderOverleyType() {
 
 function renderOverlayId() {
     let overlayIdRef = document.getElementById("overlayId");
-    overlayIdRef.innerHTML = overlayPokemonIdTemplate();
+    let id = overlayData.id.toString();
+    id = id.padStart(3,"0");
+    overlayIdRef.innerHTML = overlayPokemonIdTemplate(id);
 }
 
 function closeOverlay() {

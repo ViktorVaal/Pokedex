@@ -8,9 +8,9 @@ function pokeCardTemplate(index) {
         </div>`
 }
 
-function pokemonTypeTemplate(index) {
-    return `<span class="type bg-${data.types[index].type.name}-type">${data.types[index].type.name[0].toUpperCase() +
-        data.types[index].type.name.slice(1)}</span>`
+function pokemonTypeTemplate(typeIndex) {
+    return `<span class="type bg-${data.types[typeIndex].type.name}-type">${data.types[typeIndex].type.name[0].toUpperCase() +
+        data.types[typeIndex].type.name.slice(1)}</span>`
 }
 
 function overlayPokemonTypeTemplate(index) {

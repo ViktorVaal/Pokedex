@@ -17,14 +17,8 @@ function overlayPokemonCardTemplate(index) {
                 </div>`
 }
 
-function overlayPokemonIdTemplate() {
-    if (overlayData.id < 10) {
-        return `<span class="id">#00${overlayData.id}</span>`
-    } else if (overlayData.id >= 10 && data.id < 100) {
-        return `<span class="id">#0${overlayData.id}</span>`
-    } else {
-        return `<span class="id">#${overlayData.id}</span>`
-    }
+function overlayPokemonIdTemplate(id) {
+        return `<span class="id">#${id}</span>`
 }
 
 function aboutInfoTemplate() {

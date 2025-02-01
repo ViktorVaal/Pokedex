@@ -1,3 +1,5 @@
+
+function toggleScroll() {}
 let bodyRef = document.getElementById("body");
 let allPokemon = {};
 let filteredPokemon = [];
@@ -8,16 +10,12 @@ let overlayData = {};
 let spezies = {};
 let weakness = {};
 let evoChain = {};
-
+let pokemonIdRef = document.getElementsByClassName("pokemon-id");
+let shortInfoRef = document.getElementsByClassName("short-info");
+let spriteRef = document.getElementsByClassName("pokemon-id");
+let pokeCardRef = document.getElementsByClassName("poke-card");
 function init() {
     renderPokeCard();
-}
-
-function render() {
-    renderPokemonType();
-    renderPokemonId();
-    renderPokemonSprite();
-    renderBackgroundColor()
 }
 
 async function getData(path = "") {
@@ -37,6 +35,17 @@ async function getData(path = "") {
     }
 }
 
+/**
+ * Asynchronously fetches Pokémon data and renders Pokémon cards on the webpage.
+ * 
+ * This function retrieves a list of Pokémon from the PokéAPI based on the specified
+ * limit and offset. It then updates the inner HTML of the content element with
+ * Pokémon card templates and logs the fetched Pokémon data to the console.
+ * 
+ * @async
+ * @function renderPokeCard
+ * @returns {Promise<void>} A promise that resolves when the Pokémon data has been fetched and rendered.
+ */
 async function renderPokeCard() {
     allPokemon = {};
     allPokemon = await getData(`https://pokeapi.co/api/v2/pokemon?limit=${amount}&offset=${offset}`);
@@ -45,50 +54,36 @@ async function renderPokeCard() {
         contentRef.innerHTML += pokeCardTemplate(index);
     }
     toggleScroll();
-    render();
+    renderPokeminInfos();
 }
 
-async function renderPokemonId() {
-    let pokemonIdRef = document.getElementsByClassName("pokemon-id");
-    for (let i = 0; i < pokemonIdRef.length - offset; i++) {
+/**
+ * Asynchronously fetches Pokémon data and renders Pokémon IDs on the webpage.
+ * 
+ * This function retrieves the ID of each Pokémon from the PokéAPI and updates
+ * the inner HTML of the corresponding .pokemon-id elements with a template
+ * including the ID.
+ * 
+ * @async
+ * @function renderPokemonId
+ * @returns {Promise<void>} A promise that resolves when the IDs have been rendered.
+ */
+async function renderPokeminInfos() {
+    for (let i = 0; i < allPokemon.results.length; i++) {
         data = await getData(`https://pokeapi.co/api/v2/pokemon/${i + offset + 1}/`);
-        for (let index = 0; index < 1; index++) {
-            pokemonIdRef[i + offset].innerHTML += pokemonIdTemplate(data);
-        }
+            render(i);
     }
+    toggleScroll()
 }
 
-async function renderPokemonType() {
-    let shortInfoRef = document.getElementsByClassName("short-info");
-    for (let i = 0; i < shortInfoRef.length - offset; i++) {
-        data = await getData(`https://pokeapi.co/api/v2/pokemon/${i + offset + 1}/`);
-        for (let index = 0; index < data.types.length; index++) {
-            shortInfoRef[i + offset].innerHTML += pokemonTypeTemplate(index);
-        }
+function render(i) {
+    pokemonIdRef[i + offset].innerHTML += pokemonIdTemplate(data);
+    spriteRef[i + offset].innerHTML += pokemonSpriteTemplate(data);
+    pokeCardRef[i + offset].classList.add(`bg-${data.types[0].type.name}`);
+    for (let typeIndex = 0; typeIndex < data.types.length; typeIndex++) {
+        shortInfoRef[i + offset].innerHTML += pokemonTypeTemplate(typeIndex);
     }
 }
-
-async function renderPokemonSprite() {
-    let spriteRef = document.getElementsByClassName("pokemon-id");
-    for (let i = 0; i < spriteRef.length - offset; i++) {
-        data = await getData(`https://pokeapi.co/api/v2/pokemon/${i + offset + 1}/`);    
-        for (let index = 0; index < 1; index++) {
-            spriteRef[i + offset].innerHTML += pokemonSpriteTemplate(data);
-        }
-    }
-}
-
-async function renderBackgroundColor() {
-    let pokeCardRef = document.getElementsByClassName("poke-card");
-    for (let i = 0; i < pokeCardRef.length - offset; i++) {
-        data = await getData(`https://pokeapi.co/api/v2/pokemon/${i + offset + 1}/`);   
-        for (let index = 0; index < 1; index++) {
-            pokeCardRef[i + offset].classList.add(`bg-${data.types[0].type.name}`);
-        }
-    }
-    toggleScroll();
-}
-
 
 async function loadMorePokemon() {
     offset = offset + amount;
